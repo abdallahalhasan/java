@@ -1,0 +1,951 @@
+package javadil;
+import javax.swing.JOptionPane;// input for  Window
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Scanner; //input for  Console
+
+
+//stringlerin karşılaştırmak için s1.equals(2)
+public class java1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	/*
+		
+		   //************************************** Output 
+	     String name = "Abdullah";
+		 System.out.println("hello "+name);   //Bir satir inir ve devam eder 
+		 System.out.println("hello world");    // (print )bir sater inmez  ve diğer komutlar aynı satirde basar 
+		int number1=10;
+        int number2=10;
+        for( int i=0;i<4 ; i++ ) {
+        	if(i==2) {
+        	System.out.println("done");
+        	}
+        	int x = number1 + number2;
+            System.out.println(x);
+        	
+        }
+        // window Output
+        
+        JOptionPane.showMessageDialog(null, "Hi \n" +name);
+        
+     
+        */
+		
+		    //*************************************** Input
+		// input for  Window
+		/*
+		String a =JOptionPane.showInputDialog("");
+		System.out.println(a);
+		JOptionPane.showMessageDialog(null, a);
+		
+		*/
+		
+		// input for  Console
+		/*
+		Scanner sc= new Scanner(System.in);
+		System.out.println("plase enter your age ");
+		int x=sc.nextInt();
+		System.out.println("Your age is = "+x);
+
+        */
+		
+		
+		
+		
+		      //*************************** type conversion
+		
+		
+		//String to integer (parseInt , parseFloat,parseDouble )
+		/*
+		
+		String input =JOptionPane.showInputDialog("Plase enter number ");
+		int x = Integer.parseInt(input);
+		System.out.println("Multiple of "+x+"="+x*2);
+		*/
+		/*
+		char dokuz = '9';
+		String dokuz1 = "9";
+		int tam= 9 ;
+		double  x = Double.parseDouble(dokuz1);
+		System.out.println(x);
+		*/
+	
+		
+		
+		        //*************************** If Statement
+		//simple if elsee 
+		/*
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Please enter your scoore ");
+		int mark =sc.nextInt();
+		
+		if(mark >= 60)
+		{
+			System.out.println("Your are Scu");
+		}else {
+			System.out.println("you are fail");
+			
+		}
+		*/
+		//if else if 
+		/*
+		
+		String input =JOptionPane.showInputDialog("Enter your mark ");
+		int mark = Integer.parseInt(input);
+		
+		if((mark >=90) && (mark<=100)) {
+             JOptionPane.showMessageDialog(null, "Excellent");
+             
+		} else if (mark>=80) {
+			JOptionPane.showMessageDialog(null,"Very good ");
+			
+		}else if(mark>=70) {
+			JOptionPane.showMessageDialog(null, "good");
+		}else if(mark >=60) {
+			JOptionPane.showMessageDialog(null,"Pass");
+		}else {
+			JOptionPane.showMessageDialog(null, "fail");
+		}
+		*/
+		
+		//if nested
+		/*
+		System.out.println("Please enter your purch ");
+		double money = sc.nextFloat();
+		double x;
+
+		System.out.println("Please enter your grade ");
+		String grade = sc.next();
+		if(grade =="Exccellent") {
+			x =money -(money * 0.5);
+			System.out.println("x = "+ x);
+
+			
+		}else if(grade == "very good") {
+			 x = money - (money* 0.3);
+				System.out.println("x = "+ x);
+
+		}
+		*/
+		
+		
+		/*
+		System.out.println("Please enter number ");
+		int x = sc.nextInt();
+		
+		if(x % 2 == 0) 
+		if( x %  3 == 0 )
+			if(x % 5 == 0 )
+				System.out.println("THE "+x +" "+ "is mulltiple of 2,3,and 5 ");
+			else 
+				System.out.println("THE "+ x + " " + " does not mulltiple 5 ");
+		else 
+			System.out.println("THE "+x  + " " + "does not mulltiple 3 ");
+		else 
+			System.out.println("THE "+x + " "+ "does not mulltiple 2 ");
+			*/
+		
+
+
+
+
+		
+		
+		
+		
+		
+		
+		//bölümün kalanı 
+		/*
+		String input =JOptionPane.showInputDialog("Enter integer number ");
+		int x = Integer.parseInt(input);
+		int f =x % 10;
+		int s = x/10;
+		JOptionPane.showMessageDialog(null,f+"\n"+s);
+		*/
+		
+		
+		/*
+		
+		Scanner sc=new Scanner(System.in);
+		float a =sc.nextFloat();
+		float b=sc.nextFloat();
+		float c=sc.nextFloat();
+		float result =a*a + b*2+(c*b)/3;
+		System.out.println(result);
+		System.out.println("Post a = "+a++);
+		System.out.println("pre c = "+a--);
+		*/
+		
+		/*
+		int x=5;
+		int sayi =x++;
+		System.out.println("sayi = "+sayi);//5
+		System.out.println("x ="+x);//6
+		System.out.println(sayi++);//5
+		System.out.println(++sayi);//7
+        */
+		
+		//conditional operator 
+		/*
+		int x = sc.nextInt();
+		int y = (x>0) ? 5 : 1;
+		System.out.println("y = "+y);
+		*/
+		
+		//////Bir sayının basamaklarının sayı değerlerinin toplamını bulan programı yazınız.
+		/*
+		int sayi =456 ,toplam;
+		int yuzlerbasamak , onlarbasamak,birlerbasamak;
+		
+	
+		yuzlerbasamak=sayi/100;
+		System.out.println(yuzlerbasamak);
+		sayi=sayi-yuzlerbasamak*100;
+		
+		onlarbasamak=sayi/10;
+		System.out.println(onlarbasamak);
+		birlerbasamak=sayi%10;
+		
+		System.out.println(birlerbasamak);
+		toplam=yuzlerbasamak+onlarbasamak+birlerbasamak;
+		System.out.println("basamaklarin toplamı = "+toplam);
+		*/
+		
+		
+		/*
+		int a=6,b=18,c=3;
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println("a = "+ a );
+		System.out.println("a + b = "+ a+b);
+		System.out.println("a + b = "+ (a+b));
+		System.out.print(a+b+"");
+		System.out.print(a+" "+b+" ");
+		System.out.println("Toplam = "+a+b+c);
+		a=b-c;
+		System.out.println("a = "+ a + " b = "+ b + " c = "+c  );
+		*/
+		
+		
+		
+		/*
+         //********************************artıma işlemleri 
+		int x = 4;
+		int y = ++x;
+		int t =y++;
+		System.out.println(y);
+		*/
+		
+		/*
+		
+		int a =3,b=5,c;
+		c = a++ + b;
+		System.out.println("a = "+a);
+		System.out.println("b = "+b);
+		System.out.println("c = "+c);
+		*/
+		
+		/*
+		int x =5, sayi =x++;
+		System.out.println(sayi);//5
+		System.out.println(x);//6
+		System.out.println(sayi++);//5
+		System.out.println(++sayi);//7
+		
+		*/
+		/*
+		int a =3,b=5,c;
+		c = a * ++b/5-12 *a+b;
+		System.out.println(c);
+		*/
+		/*
+		int a =3,b=5,c;
+		c = a * ++b/5-12 *a+b;
+		boolean bool = a + b < a*c && a+b >=b+a; 
+		System.out.println(bool);
+		*/
+		/*
+		
+		int a= 2 , b=3, c=6, d=1;
+		System.out.println( ((a<b) && (c<d))     );
+		System.out.println(  ((a<b) || (c<d))    );
+		System.out.println( ! (a<b) );
+		System.out.println(  ((a<b) & (c<d))    );
+		System.out.println( ((a<b) | (c<d))    );
+		System.out.println( ((a<b) ^ (c<d))    );
+        */
+		
+		
+		
+		
+		
+		//*****************STRİNGS 
+		//uzunluk
+		/*
+		int name ="Abdullah".length();
+		System.out.println(name);
+		*/
+		
+		//toLowerCase Büyük hafleri küçük harfleri çevirir 
+		/*
+		String name ="ABDULLAH";
+		String ilet =name.toLowerCase();
+		System.out.println(ilet);
+		*/
+		//toUpperCase küçük harfleri büyük harfleri çevirir 
+		/*
+		String name ="abdullah";
+		String ilet =name.toUpperCase();
+		System.out.println(ilet);
+		*/
+		//substring çüleminin bilirli bir sayi içinde harfleri siler 
+		/*
+		String name ="ABDULLAH";
+		String ilet =name.substring(4);
+		System.out.println(ilet);
+		*/
+		//indexof bir Stringin arar . 
+		
+		/*
+		String name ="ABDULLAH ALHASAN";
+		int ilet =name.indexOf("A",15);
+		System.out.println(ilet);
+		*/
+		
+		//lastIndexOf nerede son görüldüğü
+		/*
+		String name ="ABDULLAH ALHASAN";
+		int ilet =name.lastIndexOf("S");
+		System.out.println(ilet);
+		*/
+		
+		//trim dizinin başı sonundaki boşlıkları siler . 
+		/*
+		String name ="               ABDULLAH ALHASAN                    ";
+		String ilet =name.trim();
+		System.out.println(ilet);
+		*/
+		
+		
+		//charAt numara kullanarak o numarada abulunana harfı çıkar 
+		/*
+		String name ="ABDULLAH ALHASAN";
+		char ilet =name.charAt(3);
+		System.out.println(ilet);
+		*/
+		
+		// compareTo iki metinin alfabetik göre karşlatır . 
+		/*
+		String name ="ABDULLAH ALHASAN";
+		int ilet =name.compareTo("ABDULLAH");
+		System.out.println(ilet);
+		*/
+		
+	//**************************************************************2.HAFTA SONU 
+
+	/*
+		char time='s';
+		switch (time) {
+		    case 's': 
+			System.out.println("Günaydin");
+			break;
+			case 'a':
+				System.out.println("İyi akşmalar");
+			 break;
+				 default : System.out.println("zaman bitti ");		
+				 }
+	*/
+		/*
+		
+		do {
+			gifts =gifts-10;
+			System.out.printf( "%d %s",10,"verdim\n");
+			System.out.printf( "%d %s",gifts, " var\n");
+		}while(gifts > 0);
+		*/
+		/*
+		int gifts =100;
+		while(gifts > 0) {
+			gifts =gifts-10;
+			System.out.printf( "%d %s",10,"verdim\n");
+			System.out.printf( "%d %s",gifts, " kaldı\n");
+		}
+		*/
+		/*
+		int gifts =100;
+		for(int i =100;i>0;i=i-10) {
+			gifts =gifts-10;
+			System.out.printf( "%d %s",10,"verdim\n");
+			System.out.printf( "%d %s",gifts, " kaldı\n");
+		}
+		*/
+		//*************************************arrays
+		/*
+			int [] array = {1,2,3,4,9,10,-45,0};
+			String [] array1= {"Abdullah","ahmet"};
+			char [] array2= {'b','a','c'};
+			System.out.println("array size ="+array.length);
+			for(int i=0;i<array.length;i++) {
+				System.out.println(i+"indexi = "+" array elemanı = "+array[i]+" elemanın adresei = "+array);
+
+				
+			}
+			System.out.println("\n \n ");
+
+			System.out.println("array size ="+array1.length);
+			for(int x=0;x<array1.length;x++) {
+				System.out.println(x+"indexi = "+" array elemanı = "+array1[x]+" elemanın adresei = "+array1);
+				
+			}
+			System.out.println("\n \n ");
+			System.out.println("array size ="+array2.length);
+			for(int x=0;x<array2.length;x++) {
+				System.out.println(x+"indexi = "+" array elemanı = "+array2[x]+" elemanın adresei = "+array2);
+			}
+			
+			
+			
+			
+			*/
+		//*********************************************** foreach
+		
+		
+		
+		/*
+		int [] array = {1,2,3,4,9,10,-45,0};
+		String [] array1= {"Abdullah","ahmet"};
+		char [] array2= {'b','a','c'};
+		for(String a: array1) {
+			System.out.println(a);
+			
+		}
+		for(int x: array) {
+			System.out.println(x);
+			
+		}
+		for(char f: array2) {
+			System.out.println(f);
+			
+		}
+		*/
+		
+		
+		
+		
+		
+		
+		
+		//*******************************************************array list 
+		/*
+		ArrayList<Integer> arrayList =new ArrayList<Integer>();
+		arrayList.add(1);
+		arrayList.add(21);
+		arrayList.add(21);
+		arrayList.remove(1);
+		
+		System.out.println(arrayList.get(0));
+		System.out.println("array size = "+arrayList.size());
+		*/
+
+
+		//*****************************************************HashMaps
+		/*
+		
+		HashMap<String,Integer> hasMap=new HashMap<String,Integer>();
+		hasMap.put("key 1", 17);
+		hasMap.put("key 2", 45);
+		
+		System.out.println(hasMap.get("key 2"));
+		System.out.println(hasMap.size());
+		System.out.println(hasMap.isEmpty());
+		*/
+		
+		
+		
+		
+		
+		//********hocadan program
+		/*
+		System.out.println("lütfen bir sayı giriniz : ");
+		int x=sc.nextInt();
+		
+		if(x%2==0) {
+			System.out.println("çift sayıdır ");
+		}
+		else {
+			System.out.println("tek sayıdır ");
+
+		}
+		*/
+		/*
+		System.out.println("lütfen bir plakanın numarsı giriniz : ");
+		int x=sc.nextInt();
+		
+		if(x==39) {
+			System.out.println("bu plaka kırklareli aidir ");
+		}
+		else {
+			System.out.println("bu plaka başka bir şehre aidir  ");
+
+		}
+		*/
+		/*
+		System.out.println("lütfen oğrencilerin notlarının giriniz : ");
+		int x=sc.nextInt();
+		
+		if(x>=90) {
+			System.out.println("A notyla geçti");
+
+		}else if(x>=80) {
+			System.out.println("B notyla geçti");
+
+		}
+		else if(x>=70) {
+			System.out.println("D notyla geçti");
+
+		}
+		else if(x>=60) {
+			System.out.println("c notyla geçti");
+
+		}
+		else if(x>=50) {
+			System.out.println("BU ÖĞRENCİ GEÇMEDİ");
+
+		}
+		*/
+		/*
+		System.out.println("lütfen fonksiyonların değerlerine giriniz : ");
+		int x=sc.nextInt();
+		double f;
+		double g ;
+		if(x>0) {
+			f=1/(1+Math.log(x));
+			g=1/(x+Math.log(x));
+			
+	
+		}else{
+			f=1/(1+x*x);
+			g=1/(1+x+x*x);
+		}
+		System.out.println("f(x)"+f);
+		System.out.println("g(x)"+g);
+		*/
+		/*
+		System.out.println("lütfen bir sayı giriniz :  ");
+		double x=sc.nextInt();
+
+		
+		if(x<0) {
+			System.out.println(" negatif bir sayı girdiniz !!!!!");
+
+		}else {
+			x=Math.sqrt(x);
+			System.out.println(x);
+
+		}*/
+		/*
+		System.out.println("lütfen bir sayı giriniz :  ");
+		int x=sc.nextInt();
+		
+		if(x<=150000000) {
+			x=x*25/100;
+			System.out.println("ödeyeceğiniz vergi miktarı = "+x+"TL'dir");
+		}
+		*/
+		/*
+		System.out.println("lütfen üç sayı giriniz :  ");
+		double a=sc.nextDouble();
+		double b=sc.nextDouble();
+		double c=sc.nextDouble();
+		double sonuc=sc.nextDouble();
+		double x1=sc.nextDouble();
+		double x2=sc.nextDouble();
+
+		int x;
+		
+		sonuc =b*b-4-a*c;
+		if(sonuc<0) {
+			System.out.println("gerçek kök yok");
+		}else if (sonuc==0){
+			x1=b/(2*a);
+			
+		}else {
+			x1=(-b+Math.sqrt(sonuc))/(2*a);
+			x2=(-b+Math.sqrt(sonuc))/(2*a);
+			System.out.println(x1);
+			System.out.println(x2);
+
+					}
+					*/
+		
+		
+		/*
+		System.out.println("iki numara girinz :  ");
+	
+		int x =sc.nextInt();
+		int y =sc.nextInt();
+		System.out.println("Toplama için 1 girinz ");
+		System.out.println("çıkarma için 2 girinz ");
+		System.out.println("çarpma için 3 girinz ");
+		System.out.println("bölme için 4 girinz ");
+		int islem=sc.nextInt();
+		
+		switch(islem) {
+		case 1 :
+			islem=x+y;
+			System.out.println("Toplama işlemi seçtiniz " +islem);
+			break;
+		case 2 :
+			islem=x-y;
+			System.out.println("çıkarma işlemi seçtiniz " +islem);
+			break;
+		case 3 :
+			islem=x*y;
+			System.out.println("çarpma işlemi seçtiniz " +islem);
+			break;
+		case 4 :
+			islem=x/y;
+			System.out.println("bölme işlemi seçtiniz " +islem);
+			break;
+		   default :
+		   System.out.println("yanliş bir seçim yaptiniz  ");
+		
+		}
+		*/
+		/*
+		System.out.println("x değerini giriniz ");
+		double x =sc.nextDouble();
+		
+		
+		if(x<0) {
+			x=2.0/3.0*(x-1);
+			x=Math.sqrt(x);
+					System.out.println(x);
+		}else if(x==0) {
+			x=Math.sqrt(2.0/3.0);
+			
+			System.out.println(x);
+
+		}else {
+			x=2.0/3.0*Math.sqrt(x+1);
+			System.out.println(x);
+			
+		
+
+		}
+		*/
+		/*
+		int i = 0,n,toplam=0;
+		n=sc.nextInt();
+		if(n>=1) {
+			while(i<=n) {
+				toplam +=i;
+				i++;
+			}
+			System.out.println(toplam);
+			
+		}
+		*/
+			
+	
+	//***********************Math sınıfı 
+	
+	//math.abs mutlak değer alır 
+		/*
+	System.out.println("lutfen bir değer giriniz : ");
+	int x=sc.nextInt();
+	x=Math.abs(x);
+	System.out.println("x = "+x);
+	*/
+		
+		//math.ceil double olan sayılar bir sonraki tam sayıyı yaklaştırır 
+		/*
+	System.out.println("lutfen bir değer giriniz : ");
+	double x=sc.nextDouble();
+	x=Math.ceil(x);
+	System.out.println("x = "+x);
+	*/
+		//Math.floor double olan sayılar bir önceki tam sayıyı yaklaştırır 
+		/*
+		System.out.println("lutfen bir değer giriniz : ");
+		double x=sc.nextDouble();
+		x=Math.floor(x);
+		System.out.println("x = "+x);
+	*/
+		//math.log 10 tabanında logaritma işlemini yapar
+		/*
+		System.out.println("lutfen bir değer giriniz : ");
+		double x=sc.nextDouble();
+		x=Math.log10(x);
+		System.out.println("x = "+x);
+		*/
+		//math.max 2 sayının büyüğünü bılur 
+		/*
+		System.out.println("lutfen bir değer giriniz : ");
+		double x=sc.nextDouble();
+		double y=sc.nextDouble();
+		x=Math.max(x,y);
+		System.out.println("x = "+x);
+		*/
+		
+		//mat.pow üst için kullanır (kare , küp)
+		/*
+		System.out.println("lutfen bir değer giriniz : ");
+		double x=sc.nextDouble();
+		double y=sc.nextDouble();
+		x=Math.pow(x,y);
+		System.out.println("x = "+x);
+	*/
+		// math.random restgele bir sayı üretir
+		/*
+		System.out.println("lutfen bir değer giriniz : ");
+		double x;
+		x= Math.random();
+		System.out.println("x = "+x);
+	*/
+		//math.sqrt karekök ifadenin anlamına gelir 
+		/*
+		System.out.println("lutfen bir değer giriniz : ");
+		double x=sc.nextDouble();
+		x=Math.sqrt(x);
+		System.out.println("x = "+x);
+	*/
+		
+		//*********************************** 3.Haftanın Sonu
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//*****************************function
+		/*
+		String isim =yourname("ahmet ", "abdullah");
+		System.out.println(isim);
+		*/
+		
+		
+		//**********************for döngüsü 
+		/*
+		int kackere,zar1;
+		System.out.println("kaç kere zar atıyoruz ? ");
+		kackere=sc.nextInt();
+		for(int i =0; i<kackere;i++) {
+			zar1=((int)(Math.random()*6)+1);
+			System.out.println(zar1);
+		}
+		*/
+		/*
+		int sonuc=1;
+		System.out.println("bir sayi giriniz ");
+		int sayi=sc.nextInt();
+		for(int i =1;i<=sayi;i++) {
+			sonuc=sonuc*i;	
+			
+		}
+		System.out.println(sayi +" ini faktoriyle = "+sonuc);
+		*/
+		/*
+		int sayi1=1,sayi2=1,yeni;
+		for(int i=3;i<=10;i++) {
+			yeni=sayi1+sayi2;
+			System.out.println(yeni+" ");
+			sayi1=sayi2;
+			System.out.println(" sayi2= "+sayi2+" sayi1= "+sayi1);
+			sayi2=yeni;
+			System.out.println(" yeni= "+yeni);
+		}
+		*/
+		/*
+		int sayi1,sayi2,okek=0;
+		System.out.println("Birinci sayi girinz ");
+		sayi1=sc.nextInt();
+		System.out.println("ikinci sayi girinz ");
+		sayi2=sc.nextInt();
+		 for(int i=1;i<=sayi1*sayi2;i++) {
+			 if(i%sayi1==0 && i%sayi2==0) {
+				 okek=i;
+				 break;
+			 }
+			 
+		 }
+		 System.out.println(okek);
+		*/
+		/*
+		 int sayi1, sayi2, okek =0;
+		 Scanner klavye= new Scanner (System.in);
+		 System.out.print("Birinci sayiyi giriniz:");
+		 sayi1=klavye.nextInt();
+		 System.out.print("ikinci sayiyi giriniz.");
+		 sayi2=klavye.nextInt();
+		 for(int i=1; i<=sayi1*sayi2; i++){
+		 if(i%sayi1==0 && i%sayi2==0) {
+			 okek=i;
+			 break;
+		 }
+		
+		 }
+		 System.out.println("Sayi1 ve sayi2nin OKEKi :" +okek);
+		
+		*/
+		
+		/*
+		int x=sc.nextInt();
+		for(int i=1;i<x;i++) {
+			if(x%i==0) {
+				System.out.println(i);
+			}
+		}
+		*/
+		/*
+		for(int i=1;i<=3;i++) {
+			for(int j=1;j<=3;j++) {
+				System.out.print("*");
+			}
+			System.out.println(" ");
+		}
+		*/
+		/*
+		for(int i=1;i<=5;i++) {
+			
+			for(int j=1;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println(" ");
+		}
+		*/
+		/*Klavyeden girilen sayının asal sayı olup olmadığını bulan programı yazınız.
+		int sayi;
+		sayi=sc.nextInt();
+		boolean sayiAsalmi=false;
+		for (int i =2;i<sayi/2;i++) {
+			if(sayi%i==1) {
+				sayiAsalmi=true;
+				
+			}
+			
+			
+		}
+		if(sayiAsalmi) {
+			System.out.println(sayi+" asal bir sayı değıldır ");
+		}else {
+			System.out.println(sayi+" asal bir sayıdır ");
+		}
+		*/
+
+	
+		
+		/****1’den 100 e kadar asal sayıları yazdıran program.
+		int sayac =0;
+		for(int sayi =2;sayi<=100;sayi++) {
+		    int kontrol = 0;
+		      for(int i = 2; i < sayi /2;i++)
+		            {
+			            if(sayi % i == 0) {
+		                       kontrol = 1;
+		                       break;
+		                                                 }
+		                                              }
+		                         if(kontrol==0) {
+		                         System.out.print(sayi+ "\n");
+		                         sayac++;
+		                                       }
+		                                     }
+	                                       }
+	                                       */
+		
+		/****mühemel sayı
+		int sayi,toplam=0;
+		sayi =sc.nextInt();
+		for(int i=1;i<=sayi/2;i++) {
+			if(sayi%i==0) {
+				toplam+=i;
+				}
+			}
+		if(sayi==toplam) {
+			System.out.println("Mükemel sayıdır ");
+		}else {
+			System.out.println("Mükemel değil ");
+		}
+		}
+		*/
+	
+		
+		
+		
+		
+	/*
+	public static String yourname(String firsitname , String lastname) {
+		String name=firsitname +lastname;
+		return name;
+		
+	}
+	*/
+		
+	
+	/*
+	int i;
+	for (i=5; i>0; i--)
+	System.out.println(i);
+	
+	int sayac;
+	for(sayac=1;sayac<=5;sayac++) {
+		if(sayac==3)
+			break;
+		System.out.println("Merhaba");
+
+	}
+	*/
+		
+		/*
+		double []x= {1.2,3.4,5.7};
+		double toplam=0;
+		double max=0;
+		for(int i=0;i<x.length;i++) {
+			toplam=toplam+x[i];
+			if(max<x[i]) {
+				max=x[i];
+				
+			}
+		}
+		System.out.println(max);
+		System.out.println(toplam);
+	
+	*/
+	/*
+		double []x= {1.2,3.4,5.7};
+		boolean f=false;
+		System.out.println("lütfen aranack sayi girinz : ");
+		double y=sc.nextDouble();
+		for(int i=0;i<x.length;i++) {
+			if(y==x[i]) {
+				y=x[i];
+				f=true;
+			}
+			
+		}
+		if(f) {
+			System.out.println("aradiğinz sayi mevcuttur");
+		}else {
+			  System.out.println("aradiğin sayi mevcut değildir .");
+
+		}
+		*/
+		
+	//***************************************4.haftanın sonudur 	
+	}
+	
+	
+	
+	
+	
+
+}
