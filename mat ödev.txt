@@ -1,0 +1,280 @@
+import java.util.*;
+
+public class Main {
+	
+	private static int[][] matrisTanimlama(int[][] matrisx) {
+		Scanner scanner = new Scanner(System.in);
+		matrisx = new int[3][3];
+		for(int i = 0; i<matrisx.length; i++) {
+			
+			for(int j = 0; j<matrisx[i].length; j++) {
+				System.out.println( i +"*" + j + " elemani giriniz: ");
+				matrisx[i][j] = scanner.nextInt();
+			}
+				
+			}
+		
+		return matrisx;
+		
+	}
+	
+	
+	
+	private static void matrisYazdir(int[][] matris) {
+		int[][] matrisY = matris;
+		
+		for(int i = 0; i<matrisY.length; i++) {
+			System.out.println("");
+			for(int j = 0; j<matrisY[i].length; j++) {
+				System.out.print(matrisY[i][j] + " ");
+			}
+				
+			}
+	}
+	
+	private static int[][] matrisToplam(int[][] matris1,int[][] matris2){
+		int[][] matrisX = matris1;
+		int[][] matrisY = matris2;
+		int[][] result = new int[3][3];
+		for(int i=0; i<matrisX.length; i++) {
+			for(int j=0; j<matrisX[i].length; j++) {
+				result[i][j] = matrisX[i][j] + matrisY[i][j];
+			}
+		}
+		return result;
+	}
+	
+	private static int[][] matrisCikarma(int[][] matris1,int[][] matris2){
+		int[][] matrisX = matris1;
+		int[][] matrisY = matris2;
+		int[][] result = new int[3][3];
+		for(int i=0; i<matrisX.length; i++) {
+			for(int j=1; j<matrisX[i].length; j++) {
+				result[i][j] = matris1[i][j] - matris2[i][j];
+			}
+		}
+		return result;
+	}
+	
+	private static int[][] matrisCarpma(int[][] matris1,int[][] matris2){
+		int[][] matrisX = matris1;
+		int[][] matrisY = matris2;
+		int[][] result = new int[3][3];
+		for(int i=0; i<matrisX.length; i++) {
+			for(int j=0; j<matrisX[i].length; j++) {
+				result[i][j] =0;
+				for(int k = 0; k<matrisX[i].length; k++) {
+					result[i][j] += matrisX[i][k] * matrisY[k][j];
+				}
+			}
+		}
+		return result;
+	}
+	private static int[][] MSIC (int[][] matris1, int sabit){
+		
+		int[][] result = matris1;
+		for(int i = 0; i<result.length; i++) {
+			for (int j = 0; j<result[i].length; j++){
+				result[i][j] *= sabit;
+			}
+		}
+		return result;
+	}
+	//burada durmustuk.
+	private static int MD (int[][] matris) {
+		int[][] matrisX = matris;
+		
+		int determinant1 = 0, determinant2 = 0;
+        for (int i = 0; i < matrisX.length; i++) {
+                int det = 1, det1 = 1;
+                for (int j = 0; j < matrisX[i].length; j++) {
+            	det *= matrisX[(i + j) % matrisX[i].length][j];
+            	det1 *= matrisX[(i + j) % matrisX[i].length][matrisX.length - 1 - j];
+            }
+
+            determinant1 += det;
+            determinant2 += det1;
+        }
+
+        return determinant1 - determinant2;
+	}
+	
+	private static int determinant(int[][] matris) {
+		int[][] matrisX = matris;
+		return matrisX[0][0] * matrisX[1][1] - matrisX[0][1] * matrisX[1][0];
+	}
+	
+	private static int[][] MT(int[][] matris){
+		int[][] matrisX = matris;
+		int determinant = MD(matrisX);
+		int[][] det11 = {{matrisX[1][1],matrisX[1][2]},{matrisX[2][1],matrisX[2][2]}};
+		int[][] det12 = {{matrisX[1][0],matrisX[1][2]},{matrisX[2][0],matrisX[2][2]}};
+		int[][] det13 = {{matrisX[1][0],matrisX[1][1]},{matrisX[2][0],matrisX[2][1]}};
+		int[][] det21 = {{matrisX[0][1],matrisX[0][2]},{matrisX[2][1],matrisX[2][2]}};
+		int[][] det22 = {{matrisX[0][0],matrisX[0][2]},{matrisX[2][0],matrisX[2][2]}};
+		int[][] det23 = {{matrisX[0][0],matrisX[0][1]},{matrisX[2][0],matrisX[2][1]}};
+		int[][] det31 = {{matrisX[0][1],matrisX[0][2]},{matrisX[1][1],matrisX[1][2]}};
+		int[][] det32 = {{matrisX[0][0],matrisX[0][2]},{matrisX[1][0],matrisX[1][2]}};
+		int[][] det33 = {{matrisX[0][0],matrisX[0][1]},{matrisX[1][0],matrisX[1][1]}};
+		for(int i = 0; i<matrisX.length; i++) {
+			for(int j = 0; i<matrisX[i].length; j++) {
+				if(i==0 && j==0) matrisX[i][j] = determinant(det11);
+				else if(i==0 && j==1) matrisX[i][j] = -(determinant(det12));
+				else if(i==0 && j==2) matrisX[i][j] = determinant(det13);
+				else if(i==1 && j==0) matrisX[i][j] = -(determinant(det21));
+				else if(i==1 && j==1) matrisX[i][j] = determinant(det22);
+				else if(i==1 && j==2) matrisX[i][j] = -(determinant(det23));
+				else if(i==2 && j==0) matrisX[i][j] = determinant(det31);
+				else if(i==2 && j==1) matrisX[i][j] = -(determinant(det32));
+				else if(i==2 && j==2) matrisX[i][j] = determinant(det33);
+				else {break;}
+			}
+		}
+		matrisX = MSIC(matrisX,1/determinant);
+		return matrisX;
+	}
+	
+	private static void MI (int[][] matris) {
+		int[][] I = {{1,0,0},{0,1,0},{0,0,1}};
+		
+		int[][] matrisX = matris;
+		int[][] result = new int[3][3];
+		boolean inv =false;
+		for(int i=0; i<result.length; i++) {
+			for(int j=0; j<result[i].length; j++) {
+				result[i][j] =0;
+				for(int k = 0; k<result[i].length; k++) {
+					result[i][j] += matrisX[i][k] * matrisX[k][j];
+					
+				}
+			}
+		
+	}
+		System.out.println("\n\nmatris kendisiyle carpsak, sonuc= ");
+		
+		matrisYazdir(result);
+		for(int i = 0; i<result.length; i++) {
+			for (int j = 0; j<result[i].length; j++){
+				if(result[i][j]==I[i][j]) {
+					inv = true;
+					
+				}
+				else {
+					break;
+				}
+			}
+		}
+		
+		if(inv == true) {
+			System.out.println("\nyazdiginiz matris involutif matristir");
+		}
+		else {
+			System.out.println("\nyazdiginiz matris involutif matris degildir");
+		}
+		
+		
+		
+		
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[][] sonuc;
+		int matris1[][];
+		int matris2[][];
+		int sabit;
+		
+		
+		
+		System.out.println("\n\nbu iki matrisle ne yapmak istediginizi belirttiniz:");
+		System.out.println("1- iki matrisin toplami.\n2- ikinci matris birinci matrisinden cikarmasi.\n3- birinici matris carpi ikinci matris."
+				+ "\n4- Matris herhangi bir sabit sayı ile çarpımı.\n5- matrisin determinantinin bulma."
+				+ "\n6- matrisin tersini bulma.\n7- matrisin involutif olup olmadigin belritmek");
+		
+		int secim = scanner.nextInt();
+		if(secim == 1 || secim == 2 || secim == 3) {
+			 matris1 = new int [3][3];
+			 matris2 = new int [3][3];
+			System.out.println("3*3 ilk matrisin elemanlarini giriniz: ");
+			matris1 = matrisTanimlama(matris1);
+			System.out.println("girdiginiz elemanlarin matrisi: ");
+			matrisYazdir(matris1);
+			
+			System.out.println("\n\n3*3 ikinci matrisin elemanlarini giriniz: ");
+			matris2 = matrisTanimlama(matris2);
+			System.out.println("girdiginiz elemanlarin matrisi: ");
+			matrisYazdir(matris2);
+			switch(secim) {
+			case 1:
+				sonuc = matrisToplam(matris1,matris2);
+				System.out.println("\n\nToplam matrisi: ");
+				matrisYazdir(sonuc);
+				break;
+	        case 2:
+	        	sonuc = matrisCikarma(matris1,matris2);
+				System.out.println("\n\nSonuc matrisi: ");
+				matrisYazdir(sonuc);
+				
+				break;
+	        case 3:
+	        	sonuc = matrisCarpma(matris1,matris2);
+				System.out.println("\n\nSonuc matrisi: ");
+				matrisYazdir(sonuc);
+		
+		        break;
+			}
+			
+		}
+		switch(secim) {
+        case 4:
+        	matris1 = new int [3][3];
+			System.out.println("3*3 matrisin elemanlarini giriniz: ");
+			matris1 = matrisTanimlama(matris1);
+			System.out.println("girdiginiz elemanlarin matrisi: ");
+			matrisYazdir(matris1);
+			System.out.println("\nSabit sayini giriniz: ");
+			sabit = scanner.nextInt();
+			sonuc = MSIC(matris1, sabit);
+			matrisYazdir(sonuc);
+			
+			
+	
+	        break;
+        case 5:
+        	matris1 = new int [3][3];
+			System.out.println("3*3 matrisin elemanlarini giriniz: ");
+			matris1 = matrisTanimlama(matris1);
+			System.out.println("girdiginiz elemanlarin matrisi: ");
+			matrisYazdir(matris1);
+			System.out.println("\n\nbu matrisin determinanti: "+MD(matris1));
+	
+	        break;
+        case 6:
+        	matris1 = new int [3][3];
+			System.out.println("3*3 matrisin elemanlarini giriniz: ");
+			matris1 = matrisTanimlama(matris1);
+			System.out.println("girdiginiz elemanlarin matrisi: ");
+			matrisYazdir(matris1);
+			System.out.println("\n\nmatrisin Tersi: ");
+			int[][] matTers = MT(matris1);
+			matrisYazdir(matTers);
+	
+	        break;
+        case 7:
+        	
+        	matris1 = new int [3][3];
+			System.out.println("3*3 matrisin elemanlarini giriniz: ");
+			matris1 = matrisTanimlama(matris1);
+			System.out.println("girdiginiz elemanlarin matrisi: ");
+			matrisYazdir(matris1);
+			MI(matris1);
+	
+	        break;
+		}
+		
+		
+
+	}
+
+}
